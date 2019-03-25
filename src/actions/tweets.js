@@ -35,7 +35,7 @@ export function handleToggleTweet (info) {
 function addTweet(tweet) {
     return {
         type: ADD_TWEET,
-        tweet
+        tweet,
     }
 }
 

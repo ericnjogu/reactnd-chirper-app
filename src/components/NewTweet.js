@@ -17,10 +17,10 @@ class NewTweet extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const text = this.state
+        const {text} = this.state
 
         this.props.dispatch(handleAddTweet(text, this.props.id))
-        this.setState(() => {text:''})
+        this.setState({text:''})
     }
 
     render() {
