@@ -3,12 +3,12 @@ import {connect} from 'react-redux'
 import {formatTweet, formatDate} from '../utils/helpers'
 import {TiArrowBackOutline, TiHeartOutline, TiHeartFullOutline} from 'react-icons/ti'
 import {handleToggleTweet} from '../actions/tweets'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 class Tweet extends Component {
     toParent = (e, id) => {
         e.preventDefault()
-        // TODO
+        this.props.history.push(`/tweet/${id}`)
     }
 
     handleLike = (e) => {
@@ -61,4 +61,4 @@ function mapStateToProps({authedUser, users, tweets}, {id}) {
     }
 }
 
-export default connect(mapStateToProps)(Tweet)
+export default withRouter(connect(mapStateToProps)(Tweet))
